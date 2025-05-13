@@ -5,57 +5,58 @@ const services = [
   {
     title: "Electrical Engineering",
     image: "/assets/electrical.png",
-    link: "/services",
+    link: "/electrical",
   },
   {
     title: "Electronics",
     image: "/assets/electronics.png",
-    link: "/services",
+    link: "/electronics",
   },
   {
     title: "Coffee Machine Service",
     image: "/assets/Coffee.png",
-    link: "/services",
+    link: "/coffee",
   },
   {
     title: "Gym Equipment Repair",
     image: "/assets/fitnessLogo.png",
-    link: "/services",
+    link: "/gym",
   },
   {
     title: "Catering Equipment Service",
     image: "/assets/catering.png",
-    link: "/services",
+    link: "/catering",
   },
   {
     title: "Medical Equipment Service",
     image: "/assets/medical.png",
-    link: "/services",
+    link: "/medical",
   },
   {
     title: "Electromechanical",
     image: "/assets/electromechanical.png",
-    link: "/services",
+    link: "/electromechanical",
   },
   {
     title: "Clocks",
     image: "/assets/clock.webp",
-    link: "/services",
+    link: "/clocks",
   },
   {
     title: "Network Service",
     image: "/assets/network.png",
-    link: "/services",
+    link: "/network",
   },
   {
     title: "Smart Home System",
     image: "/assets/SmartHome.png",
-    link: "/services",
+    link: "/smarthome",
   },
 ];
 
 export default function MultiServiceUI() {
   const navigate = useNavigate();
+
   return (
     <div className="min-h-fit bg-black py-4 px-4 text-center">
       <h2 className="text-4xl font-extrabold text-red-600 mb-10 uppercase">

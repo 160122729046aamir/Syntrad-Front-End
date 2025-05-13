@@ -16,6 +16,9 @@ import Review from './pages/Review';
 import Profile from './pages/Profile';
 import AdminDashboard from './pages/AdminDashboard';
 
+// ✅ Import new individual service components
+import CoffeeRepair from './pages/Coffee';
+
 // Protected Route Component
 const ProtectedRoute = ({ children, isAdmin = false }) => {
   const token = localStorage.getItem('token');
@@ -41,6 +44,7 @@ function App() {
           <Header />
           <main className="flex-grow mt-20">
             <Routes>
+              {/* Core routes */}
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
               <Route path="/about" element={<About />} />
@@ -49,6 +53,8 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/review" element={<Review />} />
+              
+              {/* Protected routes */}
               <Route 
                 path="/profile" 
                 element={
@@ -65,6 +71,9 @@ function App() {
                   </ProtectedRoute>
                 } 
               />
+
+              {/* ✅ Individual service routes */}
+              <Route path="/coffee" element={<CoffeeRepair/>} />
             </Routes>
           </main>
           <Footer />

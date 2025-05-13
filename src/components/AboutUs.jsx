@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { FaChartLine, FaUsersCog, FaRocket } from "react-icons/fa";
+import { FaSuitcase, FaPoundSign,FaHardHat} from "react-icons/fa";
 
 export default function AboutSection() {
   const ref = useRef(null);
@@ -60,19 +60,19 @@ export default function AboutSection() {
               animate={controls}
               className="bg-red-800 bg-opacity-20 rounded-2xl p-4 sm:p-6 shadow-lg"
             >
-              {i === 0 && <FaChartLine className="text-white text-3xl sm:text-4xl mb-3 sm:mb-4 mx-auto" />}
-              {i === 1 && <FaUsersCog className="text-white text-3xl sm:text-4xl mb-3 sm:mb-4 mx-auto" />}
-              {i === 2 && <FaRocket className="text-white text-3xl sm:text-4xl mb-3 sm:mb-4 mx-auto" />}
+              {i === 0 && <FaSuitcase className="text-white text-3xl sm:text-4xl mb-3 sm:mb-4 mx-auto" />}
+              {i === 1 && <FaPoundSign className="text-white text-3xl sm:text-4xl mb-3 sm:mb-4 mx-auto" />}
+              {i === 2 && <FaHardHat className="text-white text-3xl sm:text-4xl mb-3 sm:mb-4 mx-auto" />}
 
               <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-                {i === 0 && "Track Campaigns"}
-                {i === 1 && "Manage Teams & Traffic"}
-                {i === 2 && "Optimize & Grow"}
+                {i === 0 && "Who We Are"}
+                {i === 1 && "What We Do"}
+                {i === 2 && "Why Choose Us"}
               </h3>
               <p className="text-sm sm:text-base text-gray-300">
-                {i === 0 && "Get analytics for all your paid media and organic traffic in one place."}
-                {i === 1 && "Control how your traffic is distributed—independently or with a team."}
-                {i === 2 && "Improve conversions and profits with testing and ROI tracking tools."}
+                {i === 0 && "At Syntrad Ltd, we’re a team of certified electricians committed to delivering safe, reliable, and high-quality electrical solutions for homes and businesses across the region."}
+                {i === 1 && "From full installations and rewiring to maintenance and emergency repairs, Syntrad Ltd provides expert electrical services tailored to your specific needs—on time and on budget."}
+                {i === 2 && "With a reputation built on trust, professionalism, and technical excellence, Syntrad Ltd is your go-to partner for electrical work done right the first time."}
               </p>
             </motion.div>
           ))}

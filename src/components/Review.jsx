@@ -4,39 +4,39 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 const reviews = [
   {
     id: 1,
-    name: 'Melina Lopez',
-    title: 'Founder | Circooles',
+    name: 'Wayne W.',
+    title: 'Surround sound speakers buzzing',
     review:
-      'I recently started using Flowcard, and it has truly exceeded my expectations! The web user-friendly interface makes navigation an effortless experience.',
+      'He knows his stuff as he is taking my old one away and bringing me a refurb at a good price.',
     stars: 5,
-    image: 'https://i.pravatar.cc/100?img=5',
+    image: 'https://i.pinimg.com/736x/99/d0/7f/99d07f72ea74f29fe21833964704cdc9.jpg',
   },
   {
     id: 2,
-    name: 'John Carter',
-    title: 'CEO | RedSky Tech',
+    name: 'Karen B.',
+    title: 'Treadmill service',
     review:
-      'Flowcard helped us streamline operations and significantly reduced user onboarding time. Highly recommend!',
+      'Carried out a service. Fixed the sound and belt. Great communication and price. Good advice given for future maintenance.',
     stars: 5,
-    image: 'https://i.pravatar.cc/100?img=11',
+    image: 'https://i.pinimg.com/736x/99/d0/7f/99d07f72ea74f29fe21833964704cdc9.jpg',
   },
   {
     id: 3,
-    name: 'Alicia Keys',
-    title: 'CMO | Brightlight',
+    name: 'Netsai R.',
+    title: 'Electrician',
     review:
-      'Elegant and efficient — Flowcard delivers performance and a fantastic user experience in one package.',
-    stars: 4,
-    image: 'https://i.pravatar.cc/100?img=32',
+      'He has done a good job .He explained everything he was going to do .Happy customer. Will recommend',
+    stars: 5,
+    image: 'https://i.pinimg.com/736x/99/d0/7f/99d07f72ea74f29fe21833964704cdc9.jpg',
   },
   {
     id: 4,
-    name: 'Ravi Singh',
-    title: 'Dev Lead | CodeZen',
+    name: 'Marnela C.',
+    title: 'We have a blocked grinder on a Delonghi Eletta.',
     review:
-      'A must-have tool for any modern business. It’s clean, fast, and intuitive.',
+      'Our issue for call out was successfully resolved within minutes of his arrival and ended up servicing the machine with the available time. He communicated when was he was caught in traffic.',
     stars: 5,
-    image: 'https://i.pravatar.cc/100?img=19',
+    image: 'https://i.pinimg.com/736x/99/d0/7f/99d07f72ea74f29fe21833964704cdc9.jpg',
   },
 ];
 
