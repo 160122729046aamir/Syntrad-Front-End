@@ -14,7 +14,7 @@ const cardData = [
     description:
       "Electronics Services include the design, repair, and maintenance of electronic devices and systems.",
     image: "/assets/electronics.png",
-    link: "/electronics",
+    link: "/electronic",
   },
   {
     title: "Coffee Machine Service",
@@ -56,7 +56,7 @@ const cardData = [
     description:
       "Clock Services include the repair, maintenance, and restoration of clocks to ensure accurate timekeeping and proper functionality.",
     image: "/assets/clock.webp",
-    link: "/clocks",
+    link: "/clock",
   },
   {
     title: "Network Service",
@@ -90,7 +90,7 @@ const Card = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {cardData.slice(0, 8).map((card, index) => (
             <Link
-              to="/services"
+              to={card.link}
               key={index}
               className="group bg-gradient-to-b from-black to-red-950 rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 border border-red-900/20 hover:border-red-600/50"
             >
@@ -134,7 +134,7 @@ const Card = () => {
           <div className="col-span-full flex flex-wrap justify-center gap-8">
             {cardData.slice(8).map((card, index) => (
               <Link
-                to="/services"
+                to={card.link}
                 key={index + 8}
                 className="w-full sm:w-[48%] lg:w-[30%] xl:w-[22%] group bg-gradient-to-b from-black to-red-950 rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 border border-red-900/20 hover:border-red-600/50"
               >

@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext';
 import { Toaster } from 'react-hot-toast';
@@ -18,6 +17,14 @@ import AdminDashboard from './pages/AdminDashboard';
 
 // ✅ Import new individual service components
 import CoffeeRepair from './pages/Coffee';
+import Electrical from './pages/Electrical';
+import Electronic from './pages/Electronics';
+import Catering from './pages/Catering';
+import Network from './pages/Network';
+import Medical from './pages/Medical';
+import Electromechanical from './pages/Electromechanical';
+import Clock from './pages/Clock';
+
 
 // Protected Route Component
 const ProtectedRoute = ({ children, isAdmin = false }) => {
@@ -74,6 +81,13 @@ function App() {
 
               {/* ✅ Individual service routes */}
               <Route path="/coffee" element={<CoffeeRepair/>} />
+              <Route path="/electrical" element={<Electrical/>} />
+              <Route path="/electronic" element={<Electronic/>} />
+              <Route path="/catering" element={<Catering/>} />
+              <Route path="/network" element={<Network/>}/>
+              <Route path="/medical" element={<Medical/>}/>
+              <Route path="/electromechanical" element={<Electromechanical/>}/>
+              <Route path="/clock" element={<Clock/>}/>
             </Routes>
           </main>
           <Footer />

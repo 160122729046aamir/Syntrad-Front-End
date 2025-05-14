@@ -103,13 +103,13 @@ const CoffeeRepair = () => {
 
   const sageImage = [
     {
-      image: "assets/",
+      image: "assets/oracletouch.jpg",
     },
     {
       image: "assets/dualboiler.jpg",
     },
     {
-      image: "assets/",
+      image: "assets/oracle.jpg",
     },
     {
       image: "assets/",
@@ -118,10 +118,22 @@ const CoffeeRepair = () => {
       image: "assets/",
     },
     {
-      image: "assets/",
+      image: "assets/baristapro.jpg",
     },
     {
       image: "assets/",
+    },
+    {
+      image: "assets/baristaexpress.jpg",
+    },
+    {
+      image: "assets/duo-temp.jpeg",
+    },
+    {
+      image: "assets/bambino.webp",
+    },
+    {
+      image: "assets/bambino.webp",
     },
   ];
 
@@ -163,7 +175,7 @@ const CoffeeRepair = () => {
             {/* Image Section */}
             <div className="md:w-1/2 flex justify-center">
               <img
-                src="https://example.com/coffee-machine-repair-image.jpg" // Replace with actual image URL
+                src="assets/mainCoffee.png" // Replace with actual image URL
                 alt="Coffee Machine Repair"
                 className="w-full max-w-xs md:max-w-sm lg:max-w-md rounded-lg shadow-lg"
               />
@@ -233,8 +245,7 @@ const CoffeeRepair = () => {
             ✅ SAGE Coffee Machine Repairs – £50 Fixed Price
           </h2>
           <p className="text-lg text-gray-300 mb-4 text-center">
-            We service a full range of Sage (Breville) machines. Each repair is
-            a flat £50 and includes full diagnostics and basic service.
+            We service a full range of Sage (Breville) machines.
           </p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {models.map((model, i) => (
@@ -245,10 +256,9 @@ const CoffeeRepair = () => {
                 <img
                   src={sageImage[i]?.image}
                   alt={model}
-                  className="mb-3 mx-auto rounded-lg"
+                  className="mb-3 mx-auto rounded-lg w-full object-cover"
                 />
                 <h3 className="text-lg font-semibold text-gray-100">{model}</h3>
-                <p className="text-red-400">£50</p>
               </div>
             ))}
           </div>
