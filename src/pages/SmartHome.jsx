@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { ArrowLeft } from "lucide-react"; 
+import { useNavigate } from "react-router-dom";
 import {
-  FaPhoneAlt,
-  FaEnvelope,
   FaMapMarkerAlt,
-  FaCalendarAlt,
 } from "react-icons/fa";
 import RequestQuote from "../components/RequestQuote";
 import { useState } from "react";
@@ -17,25 +16,25 @@ const SmartHome = () => {
     "Automated Blinds",
     "Home Network Setup",
   ];
-
+  const navigate = useNavigate();
   const homeImage = [
     {
-      image: "assets/lightingControl.jpg",
+      image: "assets/LightningAutomation.jpeg",
     },
     {
       image: "assets/security.webp",
     },
     {
-      image: "assets/",
+      image: "assets/Smart.jpeg",
     },
     {
       image: "assets/voiceControl.jpg",
     },
     {
-      image: "assets/",
+      image: "assets/AutomatedBlindds.jpeg",
     },
     {
-      image: "assets/",
+      image: "assets/homeNetwork.jpeg",
     },
   ];
 
@@ -47,9 +46,8 @@ const SmartHome = () => {
     "Glasgow",
     "Liverpool",
   ];
- const [showRequestQuote, setShowRequestQuote] = useState(false);
+  const [showRequestQuote, setShowRequestQuote] = useState(false);
   return (
-     
     <>
       <Helmet>
         <title>Smart Home & Gym Equipment Services | Syntrad UK</title>
@@ -78,6 +76,15 @@ const SmartHome = () => {
                 <p className="text-lg text-white mb-2">
                   <b>Installations & Repairs for Modern Connected Living</b>
                 </p>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    onClick={() => navigate("/")}
+                    className="flex items-center gap-2 bg-white text-red-600 font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-200"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    Back
+                  </button>
+                </div>
               </div>
 
               {/* Image Section */}
@@ -186,7 +193,6 @@ const SmartHome = () => {
             <p className="text-gray-300 mb-4">
               Enjoy fast turnaround, skilled technicians, and peace of mind.
             </p>
-            
           </section>
           {/* Book Now Button */}
           <div className="text-center mb-8">
@@ -200,17 +206,17 @@ const SmartHome = () => {
         </div>
       </div>
       {/* Request Quote Modal */}
-            {showRequestQuote && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-hidden">
-                <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl">
-                  <RequestQuote
-                    isModal={true}
-                    onClose={() => setShowRequestQuote(false)}
-                    initialService="Coffee Machine Service"
-                  />
-                </div>
-              </div>
-            )}
+      {showRequestQuote && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-hidden">
+          <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl">
+            <RequestQuote
+              isModal={true}
+              onClose={() => setShowRequestQuote(false)}
+              initialService="Coffee Machine Service"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };

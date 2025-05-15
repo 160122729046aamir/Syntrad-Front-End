@@ -1,19 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 import RequestQuote from "../components/RequestQuote";
+import { ArrowLeft } from "lucide-react"; 
+import { useNavigate } from "react-router-dom";
 
 import {
-  FaPhoneAlt,
-  FaEnvelope,
   FaMapMarkerAlt,
-  FaCalendarAlt,
 } from "react-icons/fa";
 
 const Catering = () => {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
-  
-  const models = [
+  const navigate = useNavigate();
+   const models = [
     "Commercial Oven Repair",
     "Grill Maintenance & Repairs",
     "Deep Fryer Servicing",
@@ -127,19 +126,27 @@ const Catering = () => {
                     Maintenance Plans
                   </b>
                 </p>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    onClick={() => navigate("/")}
+                    className="flex items-center gap-2 bg-white text-red-600 font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-200"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    Back
+                  </button>
+                </div>
               </div>
 
               {/* Image Section */}
               <div className="md:w-1/2 flex justify-center">
                 <img
-                  src="assets/mainCatring.png" // Replace with actual image URL
+                  src="assets/mainCatring.jpg" // Replace with actual image URL
                   alt="Catering Machine Repair"
                   className="w-full max-w-xs md:max-w-sm lg:max-w-md rounded-lg shadow-lg"
                 />
               </div>
             </div>
           </header>
-
           {/* Machine Repairs */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -169,7 +176,6 @@ const Catering = () => {
               </Link>
             </p>
           </section>
-
           {/* Diagnostic & Delivery Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-10 text-center">
@@ -200,7 +206,6 @@ const Catering = () => {
               </div>
             </div>
           </section>
-
           {/* Service Areas */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -225,7 +230,8 @@ const Catering = () => {
                 Get in touch.
               </Link>
             </p>
-          </section>          {/* Contact Section */}
+          </section>{" "}
+          {/* Contact Section */}
           <section className="mb-16 text-center">
             <h2 className="text-3xl font-bold text-red-500 mb-6">
               📞 Book a Repair
@@ -234,7 +240,6 @@ const Catering = () => {
               Enjoy fast turnaround, skilled technicians, and peace of mind.
             </p>
           </section>
-          
           {/* Book Now Button */}
           <div className="text-center mb-8">
             <button

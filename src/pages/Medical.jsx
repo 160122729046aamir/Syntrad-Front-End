@@ -2,16 +2,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import RequestQuote from "../components/RequestQuote";
+import { ArrowLeft } from "lucide-react"; 
+import { useNavigate } from "react-router-dom";
 import {
-  FaPhoneAlt,
-  FaEnvelope,
   FaMapMarkerAlt,
-  FaCalendarAlt,
 } from "react-icons/fa";
 
 const Medical = () => {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
-  
+  const navigate = useNavigate();
   const models = [
     "Dental Chair Repair",
     "Optometry Equipment Repair",
@@ -32,7 +31,7 @@ const Medical = () => {
       image: "assets/autoclave.jpg",
     },
     {
-      image: "assets/",
+      image: "assets/xray.jpeg",
     },
     {
       image: "assets/Teeth.png",
@@ -107,6 +106,15 @@ const Medical = () => {
                     Maintenance Plans
                   </b>
                 </p>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    onClick={() => navigate("/")}
+                    className="flex items-center gap-2 bg-white text-red-600 font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-200"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    Back
+                  </button>
+                </div>
               </div>
 
               {/* Image Section */}
@@ -119,7 +127,6 @@ const Medical = () => {
               </div>
             </div>
           </header>
-
           {/* Machine Repairs */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -149,7 +156,6 @@ const Medical = () => {
               </Link>
             </p>
           </section>
-
           {/* Diagnostic & Delivery Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-10 text-center">
@@ -180,7 +186,6 @@ const Medical = () => {
               </div>
             </div>
           </section>
-
           {/* Service Areas */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -205,7 +210,8 @@ const Medical = () => {
                 Get in touch.
               </Link>
             </p>
-          </section>          {/* Contact Section */}
+          </section>{" "}
+          {/* Contact Section */}
           <section className="mb-16 text-center">
             <h2 className="text-3xl font-bold text-red-500 mb-6">
               📞 Book a Repair
@@ -213,9 +219,7 @@ const Medical = () => {
             <p className="text-gray-300 mb-4">
               Enjoy fast turnaround, skilled technicians, and peace of mind.
             </p>
-           
           </section>
-          
           {/* Book Now Button */}
           <div className="text-center mb-8">
             <button

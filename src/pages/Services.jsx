@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Offer from "../components/Offer";
 import RequestQuote from "../components/RequestQuote";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -20,7 +20,7 @@ const services = [
   {
     title: "Electronics",
     image: "/assets/electronics.png",
-    link: "/electronics",
+    link: "/electronic",
     description:
       "Electronics Services include the design, repair, and maintenance of electronic devices and systems.",
   },

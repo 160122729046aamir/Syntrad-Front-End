@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import RequestQuote from "../components/RequestQuote";
+import { ArrowLeft } from "lucide-react"; 
+import { useNavigate } from "react-router-dom";
 import {
   FaCoffee,
   FaCogs,
@@ -16,15 +18,12 @@ import {
   FaCog,
   FaRecycle,
   FaTintSlash,
-  FaPhoneAlt,
-  FaEnvelope,
   FaMapMarkerAlt,
-  FaCalendarAlt,
 } from "react-icons/fa";
 
 const CoffeeRepair = () => {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
-  
+  const navigate = useNavigate();
   const models = [
     "Oracle Touch",
     "Oracle Dual Boiler",
@@ -116,16 +115,16 @@ const CoffeeRepair = () => {
       image: "assets/oracle.jpg",
     },
     {
-      image: "assets/",
+      image: "assets/baristaTouch.jpeg",
     },
     {
-      image: "assets/",
+      image: "assets/touch-impress.jpeg",
     },
     {
       image: "assets/baristapro.jpg",
     },
     {
-      image: "assets/",
+      image: "assets/express.jpeg",
     },
     {
       image: "assets/baristaexpress.jpg",
@@ -173,7 +172,6 @@ const CoffeeRepair = () => {
           content="Need a coffee machine repair? Our technicians offer fast, reliable, and affordable repairs for all types of coffee machines. Contact us now!"
         />
         <meta property="og:image" content="assets/mainCoffee.png" />{" "}
-
         <meta property="og:url" content="https://syntrad.com/coffee" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -210,6 +208,15 @@ const CoffeeRepair = () => {
                     service
                   </b>
                 </p>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    onClick={() => navigate("/")}
+                    className="flex items-center gap-2 bg-white text-red-600 font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-200"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    Back
+                  </button>
+                </div>
               </div>
 
               {/* Image Section */}
@@ -222,7 +229,6 @@ const CoffeeRepair = () => {
               </div>
             </div>
           </header>
-
           {/* What We Repair */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -242,7 +248,6 @@ const CoffeeRepair = () => {
               ))}
             </div>
           </section>
-
           {/* Common Issues */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -260,7 +265,6 @@ const CoffeeRepair = () => {
               ))}
             </div>
           </section>
-
           {/* Brands We Service */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -278,7 +282,6 @@ const CoffeeRepair = () => {
               ))}
             </div>
           </section>
-
           {/* SAGE Machine Repairs */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -311,7 +314,6 @@ const CoffeeRepair = () => {
               </Link>
             </p>
           </section>
-
           {/* Service Areas */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -336,7 +338,8 @@ const CoffeeRepair = () => {
                 Get in touch.
               </Link>
             </p>
-          </section>          {/* Contact Section */}
+          </section>{" "}
+          {/* Contact Section */}
           <section className="mb-16 text-center">
             <h2 className="text-3xl font-bold text-red-500 mb-6">
               📞 Book a Repair
@@ -344,9 +347,7 @@ const CoffeeRepair = () => {
             <p className="text-gray-300 mb-4">
               Enjoy fast turnaround, skilled technicians, and peace of mind.
             </p>
-            
           </section>
-          
           {/* Book Now Button */}
           <div className="text-center mb-8">
             <button

@@ -10,7 +10,7 @@ const services = [
   {
     title: "Electronics",
     image: "/assets/electronics.png",
-    link: "/electronics",
+    link: "/electronic",
   },
   {
     title: "Coffee Machine Service",

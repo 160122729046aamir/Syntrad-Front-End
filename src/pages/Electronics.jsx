@@ -2,22 +2,21 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import RequestQuote from "../components/RequestQuote";
+import { ArrowLeft } from "lucide-react"; // or use any icon library you prefer
+import { useNavigate } from "react-router-dom";
 import {
-  FaPhoneAlt,
-  FaEnvelope,
   FaMapMarkerAlt,
-  FaCalendarAlt,
 } from "react-icons/fa";
 
 const Electronic = () => {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
-  
+  const navigate = useNavigate();
   const models = [
     "Laptop Repair",
     "Tablet Repair",
     "Gaming Console Repair",
     "Audio System Repair",
-    "Printer Repair",
+    "PCB Repair",
     "Projector Repair",
     "Drone Repair",
     "Home Theater Repair",
@@ -34,10 +33,10 @@ const Electronic = () => {
       image: "assets/console.webp",
     },
     {
-      image: "assets/",
+      image: "assets/audio.jpeg",
     },
     {
-      image: "assets/printerRepair.jpg",
+      image: "assets/pcb.jpeg",
     },
     {
       image: "assets/projector.jpg",
@@ -120,6 +119,15 @@ const Electronic = () => {
                     Warranty Available
                   </b>
                 </p>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    onClick={() => navigate("/")}
+                    className="flex items-center gap-2 bg-white text-red-600 font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-200"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    Back
+                  </button>
+                </div>
               </div>
 
               {/* Image Section */}
@@ -132,7 +140,6 @@ const Electronic = () => {
               </div>
             </div>
           </header>
-
           {/* Machine Repairs */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -162,7 +169,6 @@ const Electronic = () => {
               </Link>
             </p>
           </section>
-
           {/* Diagnostic & Delivery Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-10 text-center">
@@ -194,7 +200,6 @@ const Electronic = () => {
               </div>
             </div>
           </section>
-
           {/* Service Areas */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
@@ -220,38 +225,15 @@ const Electronic = () => {
               </Link>
             </p>
           </section>
-
-          {/* Contact Section */}          <section className="mb-16 text-center">
+          {/* Contact Section */}{" "}
+          <section className="mb-16 text-center">
             <h2 className="text-3xl font-bold text-red-500 mb-6">
               📞 Book a Repair
             </h2>
             <p className="text-gray-300 mb-4">
               Enjoy fast turnaround, skilled technicians, and peace of mind.
             </p>
-            <div className="space-y-2 text-lg">
-              <p>
-                <FaPhoneAlt className="inline text-red-500 mr-2" />{" "}
-                <strong>Call us:</strong> 123-456-7890
-              </p>
-              <p>
-                <FaEnvelope className="inline text-red-500 mr-2" />{" "}
-                <strong>Email:</strong>{" "}
-                <a
-                  href="mailto:repairs@example.com"
-                  className="underline text-red-400"
-                >
-                  repairs@example.com
-                </a>
-              </p>
-              <p>
-                <FaCalendarAlt className="inline text-red-500 mr-2" />{" "}
-                <Link to="/services" className="underline text-red-400">
-                  Book Online Now
-                </Link>
-              </p>
-            </div>
           </section>
-          
           {/* Book Now Button */}
           <div className="text-center mb-8">
             <button

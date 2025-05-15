@@ -2,16 +2,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import RequestQuote from "../components/RequestQuote";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import {
-  FaPhoneAlt,
-  FaEnvelope,
   FaMapMarkerAlt,
-  FaCalendarAlt,
 } from "react-icons/fa";
 
 const Gym = () => {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
-  
+    const navigate = useNavigate();
   const models = [
     "Treadmill Electronics Repair",
     "Motor Diagnostics & Replacement",
@@ -32,7 +31,7 @@ const Gym = () => {
       image: "assets/motor.webp",
     },
     {
-      image: "assets/",
+      image: "assets/controlPanel.jpeg",
     },
     {
       image: "assets/beltBeplacement.webp",
@@ -47,7 +46,7 @@ const Gym = () => {
       image: "assets/treadmillRepair.jpg",
     },
     {
-      image: "assets/",
+      image: "assets/gymSuppply.jpeg",
     },
     {
       image: "assets/assambly.webp",
@@ -106,6 +105,15 @@ const Gym = () => {
                     Options
                   </b>
                 </p>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    onClick={() => navigate("/")}
+                    className="flex items-center gap-2 bg-white text-red-600 font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-200"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    Back
+                  </button>
+                </div>
               </div>
 
               {/* Image Section */}
@@ -214,7 +222,6 @@ const Gym = () => {
             <p className="text-gray-300 mb-4">
               Enjoy fast turnaround, skilled technicians, and peace of mind.
             </p>
-            
           </section>
           {/* Book Now Button */}
           <div className="text-center mb-8">
@@ -228,17 +235,17 @@ const Gym = () => {
         </div>
       </div>
       {/* Request Quote Modal */}
-                  {showRequestQuote && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-hidden">
-                      <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl">
-                        <RequestQuote
-                          isModal={true}
-                          onClose={() => setShowRequestQuote(false)}
-                          initialService="Coffee Machine Service"
-                        />
-                      </div>
-                    </div>
-                  )}
+      {showRequestQuote && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-hidden">
+          <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl">
+            <RequestQuote
+              isModal={true}
+              onClose={() => setShowRequestQuote(false)}
+              initialService="Coffee Machine Service"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };
