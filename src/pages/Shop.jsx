@@ -5,6 +5,7 @@ import { Plus, ShoppingCart, Search, Filter, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getApiUrl } from '../getApiUrl';
+import { Helmet } from "react-helmet-async";
 
 const categories = [
   {
@@ -79,6 +80,37 @@ const ShopPage = () => {
   };
 
   return (
+    <>
+  <Helmet>
+    <title>Shop Equipment Parts | Syntrad</title>
+    <meta
+      name="description"
+      content="Browse and purchase spare parts for coffee machines, catering equipment, and HiFi systems. High-quality components available across the UK."
+    />
+    <meta
+      name="keywords"
+      content="Syntrad shop, equipment parts, coffee machine parts, catering equipment, HiFi parts, grinders, boilers, amplifiers"
+    />
+    <meta name="robots" content="index, follow" />
+    
+    <meta property="og:title" content="Shop Equipment Parts | Syntrad" />
+    <meta
+      property="og:description"
+      content="Find reliable parts for your commercial and home equipment. Buy coffee machine, catering, and HiFi system parts online at Syntrad."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.syntrad.com/shop" />
+    <meta property="og:image" content="https://www.syntrad.com/assets/shop-cover.png" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shop Equipment Parts | Syntrad" />
+    <meta
+      name="twitter:description"
+      content="Shop commercial parts online for catering, HiFi, and coffee equipment. Quality and convenience with Syntrad."
+    />
+    <meta name="twitter:image" content="https://www.syntrad.com/assets/shop-cover.png" />
+  </Helmet>
+
     <div className="min-h-screen bg-black">
       {/* Mobile sidebar toggle */}
       <button
@@ -287,6 +319,7 @@ const ShopPage = () => {
         </main>
       </div>
     </div>
+    </>
   );
 };
 

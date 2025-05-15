@@ -5,6 +5,7 @@ import AboutSection from '../components/AboutUs'
 import MultiServiceUI from '../components/Services'
 import ReviewCard from '../components/Review'
 import ImageSection from '../components/Image'
+import { Helmet } from 'react-helmet-async';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -72,6 +73,23 @@ const About = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+    <title>About Us | Syntrad Services</title>
+    <meta name="description" content="Learn more about Syntrad, our mission, expert repair services, and what our customers have to say. Trusted for excellence in electronics and more." />
+    <meta name="keywords" content="About Syntrad, Syntrad Services, Electronic Repair, Electrical Services, Customer Reviews, Service Company, Kaz Moorjani" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Kaz Moorjani" />
+    <meta property="og:title" content="About Us | Syntrad Services" />
+    <meta property="og:description" content="Get to know Syntrad — delivering expert repair and maintenance solutions with a proven track record and customer satisfaction." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.syntrad.com/about" />
+    <meta property="og:image" content="https://www.syntrad.com/assets/about-banner.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Us | Syntrad Services" />
+    <meta name="twitter:description" content="Explore who we are at Syntrad. Professional repair services, trusted by customers." />
+    <meta name="twitter:image" content="https://www.syntrad.com/assets/about-banner.jpg" />
+  </Helmet>
     <div className="relative min-h-screen bg-black overflow-hidden" ref={containerRef}>
       <div className="animate-section will-change-transform">
         <AboutSection/>
@@ -86,6 +104,7 @@ const About = () => {
         <ReviewCard/>
       </div>
     </div>
+    </>
   );
 };
 

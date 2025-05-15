@@ -24,6 +24,8 @@ import Network from './pages/Network';
 import Medical from './pages/Medical';
 import Electromechanical from './pages/Electromechanical';
 import Clock from './pages/Clock';
+import Gym from './pages/Gym';
+import SmartHome from './pages/SmartHome';
 
 
 // Protected Route Component
@@ -88,7 +90,9 @@ function App() {
               <Route path="/medical" element={<Medical/>}/>
               <Route path="/electromechanical" element={<Electromechanical/>}/>
               <Route path="/clock" element={<Clock/>}/>
-            </Routes>
+              <Route path="/gym" element={<Gym/>}/>
+              <Route path="/smarthome" element={<SmartHome/>}/>            
+              </Routes>
           </main>
           <Footer />
           <Toaster position="top-right" />

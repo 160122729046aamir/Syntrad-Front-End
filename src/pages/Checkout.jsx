@@ -3,6 +3,7 @@ import { useCart } from '../contexts/CartContext';
 import { ArrowLeft, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getApiUrl } from '../getApiUrl';
+import { Helmet } from 'react-helmet-async';
 
 const Checkout = () => {
   const { cartItems, getCartTotal, clearCart } = useCart();
@@ -88,6 +89,36 @@ const Checkout = () => {
   };
 
   return (
+    <>
+  <Helmet>
+    <title>Checkout | Syntrad</title>
+    <meta
+      name="description"
+      content="Secure and seamless checkout process for your Syntrad service bookings. Fast, safe, and convenient online payments., Kaz Moorjani"
+    />
+    <meta
+      name="keywords"
+      content="Syntrad checkout, secure payment, online booking, service order, PayPal checkout, equipment repair payment"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content="Checkout | Syntrad" />
+    <meta
+      property="og:description"
+      content="Complete your Syntrad service booking with our secure online checkout. Pay easily with PayPal."
+    />
+    <meta name="author" content="Kaz Moorjani" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.syntrad.com/checkout" />
+    <meta property="og:image" content="https://www.syntrad.com/assets/checkout-cover.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Checkout | Syntrad" />
+    <meta
+      name="twitter:description"
+      content="Fast and reliable checkout for your equipment repair services at Syntrad."
+    />
+    <meta name="twitter:image" content="https://www.syntrad.com/assets/checkout-cover.png" />
+  </Helmet>
+
     <div className="min-h-screen bg-black text-white p-4 sm:p-6 lg:p-8">
       <div className="max-w-6xl mx-auto">
         <Link
@@ -272,6 +303,7 @@ const Checkout = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

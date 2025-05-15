@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -16,7 +17,7 @@ const Network = () => {
     "Cloud & Remote Access",
   ];
 
-  const electricalImage = [
+  const networkImage = [
     {
       image: "assets/wifi.webp",
     },
@@ -47,6 +48,22 @@ const Network = () => {
   ];
 
   return (
+    <>
+    <Helmet>
+  <title>Network Services | Syntrad</title>
+  <meta
+    name="description"
+    content="Syntrad offers expert network services including Wi-Fi setup, firewall security, server installation, VPN configuration, and more for home and business."
+  />
+  <meta name="keywords" content="network services, Wi-Fi setup, firewall security, VPN configuration, server installation, network support, cloud access, cybersecurity" />
+  <meta property="og:title" content="Syntrad Network Services" />
+  <meta property="og:description" content="Expert network services including Wi-Fi setup, structured cabling, firewall security, and more for homes and businesses." />
+  <meta property="og:image" content="assets/og-network-services.jpg" />
+  <meta property="og:url" content="https://www.syntrad.com/network" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://www.syntrad.com/network" />
+</Helmet>
+
     <div className="min-h-screen bg-gradient-to-br from-black via-red-950 to-black text-white font-sans py-10 px-4">
       <div className="max-w-7xl mx-auto backdrop-blur-lg bg-gradient-to-br from-red-950/20 to-black/30 border border-red-900/30 rounded-3xl shadow-2xl px-6 md:px-10 py-12">
         {/* Header */}
@@ -74,7 +91,7 @@ const Network = () => {
             <div className="md:w-1/2 flex justify-center">
               <img
                 src="assets/mainnetwork.png" // Replace with actual image URL
-                alt="Coffee Machine Repair"
+                alt="Network Repair"
                 className="w-full max-w-xs md:max-w-sm lg:max-w-md rounded-lg shadow-lg"
               />
             </div>
@@ -93,7 +110,7 @@ const Network = () => {
                 className="bg-gradient-to-br from-black/40 to-red-900/30 border border-red-700/30 text-center px-5 py-6 rounded-2xl shadow-xl hover:shadow-red-600/40 transition transform hover:scale-105"
               >
                 <img
-                  src={electricalImage[i]?.image}
+                  src={networkImage[i]?.image}
                   alt={model}
                   className="mb-3 mx-auto rounded-lg w-full h-48 object-cover"
                 />
@@ -168,6 +185,7 @@ const Network = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 

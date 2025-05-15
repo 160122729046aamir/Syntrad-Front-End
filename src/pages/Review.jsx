@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getApiUrl } from '../getApiUrl';
+import { Helmet } from 'react-helmet-async';
 
 const services = [
   "ELECTRICAL ENGINEERING",
@@ -27,6 +28,22 @@ const formatDate = (date) =>
 
 const ReviewCard = React.memo(({ review, index }) => {
   return (
+    <>
+    <Helmet>
+        <title>Customer Reviews | Syntrad Services</title>
+        <meta name="description" content="Read verified reviews from Syntrad customers. Share your experience with our repair and maintenance services." />
+        <meta name="keywords" content="Syntrad, repair services, electronics repair, electrical maintenance, customer reviews, verified feedback, equipment repair, home automation, coffee machine repair, medical equipment service" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Customer Reviews | Syntrad Services" />
+        <meta property="og:description" content="See what customers are saying about Syntrad's trusted repair and maintenance services." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.syntrad.com/review" />
+        <meta property="og:image" content="https://www.syntrad.com/seo-preview.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Customer Reviews | Syntrad Services" />
+        <meta name="twitter:description" content="Read real customer reviews about Syntrad's repair solutions." />
+        <meta name="twitter:image" content="https://www.syntrad.com/seo-preview.jpg" />
+    </Helmet>
     <div className="group bg-neutral-900/60 rounded-2xl p-6 backdrop-blur-sm border border-red-600/20 hover:border-red-600/40 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/10 relative overflow-hidden flex flex-col h-full">
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-red-600/0 group-hover:from-red-600/5 group-hover:to-red-600/10 transition-all duration-300" />
@@ -63,6 +80,7 @@ const ReviewCard = React.memo(({ review, index }) => {
         </div>
       </div>
     </div>
+    </>
   );
 });
 
@@ -106,6 +124,7 @@ const ReviewForm = () => {
   };
 
   return (
+    <>
     <div className="bg-gradient-to-br from-white to-red-50 rounded-2xl p-8 border-2 border-red-600 shadow-xl">
       <div className="text-center mb-8">
         <div className="inline-block p-3 bg-red-100 rounded-full mb-4">
@@ -207,6 +226,7 @@ const ReviewForm = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 
@@ -240,6 +260,7 @@ const Review = () => {
   };
 
   return (
+    <>
     <div className="relative min-h-screen bg-black">
       <div className="relative z-10 min-h-screen">
         {/* Header Section */}
@@ -316,6 +337,7 @@ const Review = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
