@@ -213,23 +213,7 @@ const Medical = () => {
             <p className="text-gray-300 mb-4">
               Enjoy fast turnaround, skilled technicians, and peace of mind.
             </p>
-            <div className="space-y-2 text-lg">
-              <p>
-                <FaPhoneAlt className="inline text-red-500 mr-2" />{" "}
-                <strong>Call us:</strong> 123-456-7890
-              </p>
-              <p>
-                <FaEnvelope className="inline text-red-500 mr-2" />{" "}
-                <strong>Email:</strong>{" "}
-                <a
-                  href="mailto:repairs@example.com"
-                  className="underline text-red-400"
-                >
-                  repairs@example.com
-                </a>
-              </p>
-              
-            </div>
+           
           </section>
           
           {/* Book Now Button */}
