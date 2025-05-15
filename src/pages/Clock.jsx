@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import RequestQuote from "../components/RequestQuote";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -8,6 +10,8 @@ import {
 } from "react-icons/fa";
 
 const Clock = () => {
+  const [showRequestQuote, setShowRequestQuote] = useState(false);
+  
   const models = [
     "Full Movement Overhaul",
     "Pendulum Calibration",

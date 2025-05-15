@@ -6,7 +6,8 @@ import {
   FaMapMarkerAlt,
   FaCalendarAlt,
 } from "react-icons/fa";
-
+import RequestQuote from "../components/RequestQuote";
+import { useState } from "react";
 const SmartHome = () => {
   const models = [
     "Lighting Automation",
@@ -46,8 +47,9 @@ const SmartHome = () => {
     "Glasgow",
     "Liverpool",
   ];
-
+ const [showRequestQuote, setShowRequestQuote] = useState(false);
   return (
+     
     <>
       <Helmet>
         <title>Smart Home & Gym Equipment Services | Syntrad UK</title>
@@ -199,16 +201,32 @@ const SmartHome = () => {
                   repairs@example.com
                 </a>
               </p>
-              <p>
-                <FaCalendarAlt className="inline text-red-500 mr-2" />{" "}
-                <Link to="/services" className="underline text-red-400">
-                  Book Online Now
-                </Link>
-              </p>
+              
             </div>
           </section>
+          {/* Book Now Button */}
+          <div className="text-center mb-8">
+            <button
+              onClick={() => setShowRequestQuote(true)}
+              className="px-10 py-4 bg-red-600 hover:bg-red-700 text-white text-xl font-semibold rounded-lg transition transform hover:scale-105 shadow-lg hover:shadow-red-600/30"
+            >
+              Book Now
+            </button>
+          </div>
         </div>
       </div>
+      {/* Request Quote Modal */}
+            {showRequestQuote && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-hidden">
+                <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl">
+                  <RequestQuote
+                    isModal={true}
+                    onClose={() => setShowRequestQuote(false)}
+                    initialService="Coffee Machine Service"
+                  />
+                </div>
+              </div>
+            )}
     </>
   );
 };
