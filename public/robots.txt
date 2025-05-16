@@ -1,17 +1,15 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Disallow admin and private pages
-Disallow: /admin
-Disallow: /profile
-Disallow: /checkout
-Disallow: /cart
-
-# Prevent indexing of React route fragments
-Disallow: /*?
-
-# Crawl-delay for less aggressive bots 
-Crawl-delay: 10
-
-# Sitemap 
+# Sitemap location
 Sitemap: https://syntradltd.co.uk/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Crawl-delay for all bots
+Crawl-delay: 10

@@ -180,15 +180,74 @@ export default function Services() {
           name="keywords"
           content="Syntrad services, electrical engineering, electronics repair, coffee machine maintenance, medical equipment, smart home service, catering, electromechanical repair"
         />
+        <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Syntrad Services" />
         <meta
           property="og:description"
           content="Explore our expert repair and maintenance services for electronics, fitness, coffee machines, and more."
         />
-        <meta property="og:image" content="/assets/og-services.jpg" />
-        <meta property="og:url" content="https://www.syntrad.com/services" />
+        <meta property="og:image" content="https://syntradltd.co.uk/assets/og-services.jpg" />
+        <meta property="og:url" content="https://syntradltd.co.uk/services" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://www.syntrad.com/services" />
+        <link rel="canonical" href="https://syntradltd.co.uk/services" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "Service",
+                "position": 1,
+                "name": "Electrical Engineering",
+                "description": "Electrical Engineering Services offer safe and efficient electrical system design, installation, and maintenance.",
+                "url": "https://syntradltd.co.uk/services/electrical",
+                "image": "https://syntradltd.co.uk/assets/electrical.png"
+              },
+              {
+                "@type": "Service",
+                "position": 2,
+                "name": "Electronics",
+                "description": "Electronics Services include the design, repair, and maintenance of electronic devices and systems.",
+                "url": "https://syntradltd.co.uk/services/electronic",
+                "image": "https://syntradltd.co.uk/assets/electronics.png"
+              },
+              {
+                "@type": "Service",
+                "position": 3,
+                "name": "Coffee Machine Service",
+                "description": "Includes cleaning, repair, and maintenance to ensure smooth and efficient machine performance.",
+                "url": "https://syntradltd.co.uk/services/coffee",
+                "image": "https://syntradltd.co.uk/assets/Coffee.png"
+              },
+              {
+                "@type": "Service",
+                "position": 4,
+                "name": "Gym Equipment Repair",
+                "description": "Diagnosing, fixing, and maintaining fitness machines to ensure safe and optimal performance.",
+                "url": "https://syntradltd.co.uk/services/gym",
+                "image": "https://syntradltd.co.uk/assets/fitnessLogo.png"
+              },
+              {
+                "@type": "Service",
+                "position": 5,
+                "name": "Catering Equipment Service",
+                "description": "Catering equipment maintenance, inspection, and service for efficient food operations.",
+                "url": "https://syntradltd.co.uk/services/catering",
+                "image": "https://syntradltd.co.uk/assets/catering.png"
+              },
+              {
+                "@type": "Service",
+                "position": 6,
+                "name": "Medical Equipment Service",
+                "description": "Maintenance and repair of critical medical tools and electronic devices.",
+                "url": "https://syntradltd.co.uk/services/medical",
+                "image": "https://syntradltd.co.uk/assets/medical.png"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <div
         className="bg-gradient-to-b from-black to-[#330000] text-white py-6 sm:py-10 min-h-screen"

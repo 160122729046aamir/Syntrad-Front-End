@@ -131,26 +131,49 @@ export default function Contact() {
   return (
     <>
     <Helmet>
-  <title>Contact Us | Syntrad Ltd - Expert Equipment Repair Services</title>
-  <meta name="description" content="Get in touch with Syntrad Ltd for professional equipment repair and maintenance services in Greater London. Contact us today for quick support or to schedule an appointment." />
-  <meta name="keywords" content="Syntrad,Kaz Moorjani, contact, equipment repair, London services, electrical service, electronic repair, catering equipment, coffee machine service, schedule appointment" />
-  <meta name="author" content="Kaz Moorjani" />
+      <title>Contact Us | Syntrad Ltd - Expert Equipment Repair Services</title>
+      <meta name="description" content="Get in touch with Syntrad Ltd for professional equipment repair and maintenance services in Greater London. Contact us today for quick support or to schedule an appointment." />
+      <meta name="keywords" content="Syntrad,Kaz Moorjani, contact, equipment repair, London services, electrical service, electronic repair, catering equipment, coffee machine service, schedule appointment" />
+      <meta name="author" content="Kaz Moorjani" />
+      <meta name="robots" content="index, follow" />
 
-  {/* Open Graph / Facebook */}
-  <meta property="og:title" content="Contact Syntrad Ltd | Equipment Repair Services in London" />
-  <meta property="og:description" content="Reach out to Syntrad Ltd for fast and reliable repair services across electrical, electronics, medical, catering and more." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://syntradltd.co.uk/contact" />
-  <meta property="og:image" content="https://syntradltd.co.uk/images/contact-meta.jpg" />
+      {/* Open Graph / Facebook */}
+      <meta property="og:title" content="Contact Syntrad Ltd | Equipment Repair Services in London" />
+      <meta property="og:description" content="Reach out to Syntrad Ltd for fast and reliable repair services across electrical, electronics, medical, catering and more." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://syntradltd.co.uk/contact" />
+      <meta property="og:image" content="https://syntradltd.co.uk/assets/contact-meta.jpg" />
 
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact Syntrad Ltd | Equipment Repair Services in London" />
-  <meta name="twitter:description" content="Need expert repair services? Contact Syntrad Ltd today for quick support and appointments." />
-  <meta name="twitter:image" content="https://syntradltd.co.uk/images/contact-meta.jpg" />
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Contact Syntrad Ltd | Equipment Repair Services in London" />
+      <meta name="twitter:description" content="Need expert repair services? Contact Syntrad Ltd today for quick support and appointments." />
+      <meta name="twitter:image" content="https://syntradltd.co.uk/assets/contact-meta.jpg" />
 
-  <link rel="canonical" href="https://syntradltd.co.uk/contact" />
-</Helmet>
+      <link rel="canonical" href="https://syntradltd.co.uk/contact" />
+
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Syntrad Ltd",
+          "description": "Get in touch with Syntrad Ltd for professional equipment repair and maintenance services in Greater London.",
+          "url": "https://syntradltd.co.uk/contact",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Syntrad Ltd",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+44XXXXXXXXXX",
+              "contactType": "customer service",
+              "areaServed": "GB",
+              "availableLanguage": ["English"]
+            }
+          }
+        })}
+      </script>
+    </Helmet>
 
     <div className="min-h-screen bg-gradient-to-br from-black via-[#1a0000] to-black" ref={containerRef}>
       {/* Header Section */}

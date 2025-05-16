@@ -145,6 +145,7 @@ const Hero = () => {
           content="Electrical Repair, Electronic Services, London Electronics, Syntrad, Circuit Repair, Innovative Electrical Solutions, Engineering Services"
         />
         <meta name="author" content="Syntrad" />
+        <meta name="robots" content="index, follow" />
 
         {/* Open Graph Meta Tags */}
         <meta
@@ -157,9 +158,9 @@ const Hero = () => {
         />
         <meta
           property="og:image"
-          content="https://yourdomain.com/assets/homeMain.png"
+          content="https://syntradltd.co.uk/assets/homeMain.png"
         />
-        <meta property="og:url" content="https://yourdomain.com/" />
+        <meta property="og:url" content="https://syntradltd.co.uk/" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Meta Tags */}
@@ -174,11 +175,68 @@ const Hero = () => {
         />
         <meta
           name="twitter:image"
-          content="https://yourdomain.com/assets/homeMain.png"
+          content="https://syntradltd.co.uk/assets/homeMain.png"
         />
 
         {/* Canonical Link */}
-        <link rel="canonical" href="https://yourdomain.com/" />
+        <link rel="canonical" href="https://syntradltd.co.uk/" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Syntrad",
+            "image": "https://syntradltd.co.uk/assets/logo.png",
+            "description": "Expert electrical and electronic repair services in London",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "UK"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "51.5074",
+              "longitude": "-0.1278"
+            },
+            "url": "https://syntradltd.co.uk",
+            "telephone": "+44XXXXXXXXXX",
+            "priceRange": "££",
+            "openingHours": "Mo-Fr 09:00-17:00",
+            "sameAs": [
+              "https://www.facebook.com/syntrad",
+              "https://www.linkedin.com/company/syntrad",
+              "https://twitter.com/syntrad"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Repair Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Electrical Engineering Services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Electronic Repair Services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Coffee Machine Repair"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="flex flex-col w-full overflow-hidden" ref={containerRef}>
