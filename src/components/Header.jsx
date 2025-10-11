@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { User, Mail, Lock, X, Menu, ChevronDown, LogOut, ShoppingCart, Home, Info, Settings, Star, Phone } from "lucide-react";
+import { User, Mail, Lock, X, Menu, ChevronDown, LogOut, ShoppingCart, Home, Info, Settings, Star, Phone, Contact } from "lucide-react";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import { useCart } from '../contexts/CartContext';
@@ -213,6 +213,20 @@ const Header = () => {
               }`}></span>
             </Link>
             <Link 
+              to="/contact" 
+              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${
+                isActive('/contact') ? 'text-white' : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              {/* <Settings size={16} className="group-hover:text-red-500 transition-colors" /> */}
+              {/* <Contact size={16} className="group-hover:text-red-500 transition-colors"/> */}
+              <Phone size={16} className="group-hover:text-red-500 transition-colors"/>
+              <span>Contact</span>
+              <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${
+                isActive('/contact') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+              }`}></span>
+            </Link>
+            {/* <Link 
               to="/shop" 
               className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${
                 isActive('/shop') ? 'text-white' : 'text-gray-300 hover:text-white'
@@ -223,9 +237,9 @@ const Header = () => {
               <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${
                 isActive('/shop') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
               }`}></span>
-            </Link>
+            </Link> */}
             
-            {user?.name ? (
+            {/* {user?.name ? (
               <>
                 <Link 
                   to="/contact" 
@@ -302,9 +316,9 @@ const Header = () => {
               >
                 Sign In
               </button>
-            )}
+            )} */}
             
-            <Link 
+            {/* <Link 
               to="/review" 
               className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${
                 isActive('/review') ? 'text-white' : 'text-gray-300 hover:text-white'
@@ -315,8 +329,8 @@ const Header = () => {
               <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${
                 isActive('/review') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
               }`}></span>
-            </Link>
-            
+            </Link> */}
+{/*             
             <Link 
               to="/cart" 
               className="relative p-2.5 text-gray-300 hover:text-white transition-all duration-300 bg-black hover:bg-red-900/20 rounded-full group border border-red-800/30"
@@ -327,7 +341,7 @@ const Header = () => {
                   {cartCount}
                 </span>
               )}
-            </Link>
+            </Link> */}
           </nav>
 
           {/* Mobile menu button */}
@@ -383,7 +397,7 @@ const Header = () => {
               <Settings size={18} className={isActive('/services') ? 'text-red-500' : ''} />
               <span>Services</span>
             </Link>
-            <Link 
+            {/* <Link 
               to="/shop" 
               onClick={() => setIsMenuOpen(false)} 
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${
@@ -392,8 +406,8 @@ const Header = () => {
             >
               <ShoppingCart size={18} className={isActive('/shop') ? 'text-red-500' : ''} />
               <span>Shop</span>
-            </Link>
-            {user?.name ? (
+            </Link> */}
+            {/* {user?.name ? (
               <>
                 <Link 
                   to="/contact" 
@@ -458,11 +472,21 @@ const Header = () => {
                 <User size={16} />
                 <span>Sign In</span>
               </button>
-            )}
-            
-            <div className="border-t border-red-900/30 my-2 mx-3"></div>
-            
+            )} */}
             <Link 
+                  to="/contact" 
+                  onClick={() => setIsMenuOpen(false)} 
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${
+                    isActive('/contact') ? 'bg-black border-l-2 border-red-600 text-white' : ''
+                  }`}
+                >
+                  <Phone size={18} className={isActive('/contact') ? 'text-red-500' : ''} />
+                  <span>Contact</span>
+            </Link>
+            
+            {/* <div className="border-t border-red-900/30 my-2 mx-3"></div> */}
+            
+            {/* <Link 
               to="/review" 
               onClick={() => setIsMenuOpen(false)} 
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${
@@ -487,14 +511,14 @@ const Header = () => {
                   {cartCount}
                 </span>
               )}
-            </Link>
+            </Link> */}
           </nav>
         </div>
       </div>
     </header>
 
     {/* Auth Modal */}
-    {isAuthModalOpen && (
+    {isAuthModalOpen && False && (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
         <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
           {/* Header */}

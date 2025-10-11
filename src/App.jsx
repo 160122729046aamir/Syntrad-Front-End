@@ -57,29 +57,29 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
               <Route path="/about" element={<About />} />
-              <Route path="/shop" element={<Shop />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
+              {/* <Route path="/shop" element={<Shop />} /> */}
+              {/* <Route path="/cart" element={<Cart />} /> */}
+              {/* <Route path="/checkout" element={<Checkout />} /> */}
               <Route path="/contact" element={<Contact />} />
-              <Route path="/review" element={<Review />} />
+              {/* <Route path="/review" element={<Review />} /> */}
               
               {/* Protected routes */}
-              <Route 
+              {/* <Route 
                 path="/profile" 
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <Profile />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 } 
-              />
-              <Route 
+              /> */}
+              {/* <Route 
                 path="/admin" 
                 element={
                   <ProtectedRoute isAdmin={true}>
                     <AdminDashboard />
                   </ProtectedRoute>
                 } 
-              />
+              /> */}
 
               {/* ✅ Individual service routes */}
               <Route path="/coffee" element={<CoffeeRepair/>} />
