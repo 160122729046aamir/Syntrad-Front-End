@@ -58,7 +58,7 @@ const Header = () => {
               'Authorization': `Bearer ${token}`
             }
           });
-          
+
           if (response.data.user) {
             setUser({
               name: localStorage.getItem('userName'),
@@ -109,27 +109,27 @@ const Header = () => {
 
   const handleAuthSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const url = isSignup
         ? getApiUrl('/api/register')
         : getApiUrl('/api/login');
-  
+
       const response = await axios.post(url, formData);
       const { token, user: userData } = response.data;
-  
+
       if (token && userData) {
         localStorage.setItem('token', token);
         localStorage.setItem('userRole', userData.role);
         localStorage.setItem('userName', userData.username);
         localStorage.setItem('userEmail', userData.email);
-    
+
         setUser({
           name: userData.username,
           email: userData.email,
           role: userData.role
         });
-        
+
         toast.success(isSignup ? 'Account created successfully!' : 'Signed in successfully!');
         setFormData({ username: "", email: "", password: "" });
         setIsAuthModalOpen(false);
@@ -158,75 +158,80 @@ const Header = () => {
 
   return (
     <>
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled 
-        ? 'bg-black border-b border-red-800/30 shadow-lg shadow-red-900/20' 
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? 'bg-black border-b border-red-800/30 shadow-lg shadow-red-900/20'
         : 'bg-black/80 backdrop-blur-sm border-b border-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0 flex items-center">
-            <img
-              src="/assets/logo.png"
-              alt="Syntrad"
-              className="h-10 w-auto brightness-110 transition-transform duration-300 hover:scale-105"
-            />
-          </Link>
+        }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-16 sm:h-20">
+            {/* Logo */}
+            <Link to="/" className="flex-shrink-0 flex items-center">
+              <img
+                src="/assets/logo.png"
+                alt="Syntrad"
+                className="h-10 w-auto brightness-110 transition-transform duration-300 hover:scale-105"
+              />
+            </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link 
-              to="/" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${
-                isActive('/') ? 'text-white' : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              <Home size={16} className="group-hover:text-red-500 transition-colors" />
-              <span>Home</span>
-              <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${
-                isActive('/') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-              }`}></span>
-            </Link>
-            <Link 
-              to="/about" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${
-                isActive('/about') ? 'text-white' : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              <Info size={16} className="group-hover:text-red-500 transition-colors" />
-              <span>About</span>
-              <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${
-                isActive('/about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-              }`}></span>
-            </Link>
-            <Link 
-              to="/services" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${
-                isActive('/services') ? 'text-white' : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              <Settings size={16} className="group-hover:text-red-500 transition-colors" />
-              <span>Services</span>
-              <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${
-                isActive('/services') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-              }`}></span>
-            </Link>
-            <Link 
-              to="/contact" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${
-                isActive('/contact') ? 'text-white' : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              {/* <Settings size={16} className="group-hover:text-red-500 transition-colors" /> */}
-              {/* <Contact size={16} className="group-hover:text-red-500 transition-colors"/> */}
-              <Phone size={16} className="group-hover:text-red-500 transition-colors"/>
-              <span>Contact</span>
-              <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${
-                isActive('/contact') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-              }`}></span>
-            </Link>
-            {/* <Link 
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-6">
+              <Link
+                to="/"
+                className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${isActive('/') ? 'text-white' : 'text-gray-300 hover:text-white'
+                  }`}
+              >
+                <Home size={16} className="group-hover:text-red-500 transition-colors" />
+                <span>Home</span>
+                <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${isActive('/') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}></span>
+              </Link>
+              <Link
+                to="/about"
+                className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${isActive('/about') ? 'text-white' : 'text-gray-300 hover:text-white'
+                  }`}
+              >
+                <Info size={16} className="group-hover:text-red-500 transition-colors" />
+                <span>About</span>
+                <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${isActive('/about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}></span>
+              </Link>
+              <Link
+                to="/services"
+                className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${isActive('/services') ? 'text-white' : 'text-gray-300 hover:text-white'
+                  }`}
+              >
+                <Settings size={16} className="group-hover:text-red-500 transition-colors" />
+                <span>Services</span>
+                <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${isActive('/services') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}></span>
+              </Link>
+              <Link
+                to="/amplink"
+                className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${isActive('/amblinks') ? 'text-white' : 'text-gray-300 hover:text-white'
+                  }`}
+              >
+                <Settings size={16} className="group-hover:text-red-500 transition-colors" />
+                <span>Amplink</span>
+
+                <span
+                  className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${isActive('/amblinks') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
+                ></span>
+              </Link>
+              <Link
+                to="/contact"
+                className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${isActive('/contact') ? 'text-white' : 'text-gray-300 hover:text-white'
+                  }`}
+              >
+                {/* <Settings size={16} className="group-hover:text-red-500 transition-colors" /> */}
+                {/* <Contact size={16} className="group-hover:text-red-500 transition-colors"/> */}
+                <Phone size={16} className="group-hover:text-red-500 transition-colors" />
+                <span>Contact</span>
+                <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${isActive('/contact') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}></span>
+              </Link>
+              
+              {/* <Link 
               to="/shop" 
               className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${
                 isActive('/shop') ? 'text-white' : 'text-gray-300 hover:text-white'
@@ -238,8 +243,8 @@ const Header = () => {
                 isActive('/shop') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
               }`}></span>
             </Link> */}
-            
-            {/* {user?.name ? (
+
+              {/* {user?.name ? (
               <>
                 <Link 
                   to="/contact" 
@@ -317,8 +322,8 @@ const Header = () => {
                 Sign In
               </button>
             )} */}
-            
-            {/* <Link 
+
+              {/* <Link 
               to="/review" 
               className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${
                 isActive('/review') ? 'text-white' : 'text-gray-300 hover:text-white'
@@ -330,7 +335,7 @@ const Header = () => {
                 isActive('/review') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
               }`}></span>
             </Link> */}
-{/*             
+              {/*             
             <Link 
               to="/cart" 
               className="relative p-2.5 text-gray-300 hover:text-white transition-all duration-300 bg-black hover:bg-red-900/20 rounded-full group border border-red-800/30"
@@ -342,62 +347,73 @@ const Header = () => {
                 </span>
               )}
             </Link> */}
-          </nav>
+            </nav>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-red-900/20 active:bg-red-900/40 transition-all duration-300 border border-red-800/30"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-red-900/20 active:bg-red-900/40 transition-all duration-300 border border-red-800/30"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
 
-        {/* Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
-        } overflow-hidden`}>
-          <nav className="px-2 pt-2 pb-4 space-y-1 max-h-[calc(80vh-4rem)] overflow-y-auto overscroll-behavior-contain scroll-smooth" 
-            style={{ 
-              WebkitOverflowScrolling: 'touch',
-              scrollbarWidth: 'thin',
-              scrollbarColor: '#dc2626 transparent',
-              msOverflowStyle: '-ms-autohiding-scrollbar',
-              scrollBehavior: 'smooth',
-              scrollSnapType: 'y proximity'
-            }}>
-            <Link 
-              to="/" 
-              onClick={() => setIsMenuOpen(false)} 
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${
-                isActive('/') ? 'bg-black border-l-2 border-red-600 text-white' : ''
-              }`}
-            >
-              <Home size={18} className={isActive('/') ? 'text-red-500' : ''} />
-              <span>Home</span>
-            </Link>
-            <Link 
-              to="/about" 
-              onClick={() => setIsMenuOpen(false)} 
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${
-                isActive('/about') ? 'bg-black border-l-2 border-red-600 text-white' : ''
-              }`}
-            >
-              <Info size={18} className={isActive('/about') ? 'text-red-500' : ''} />
-              <span>About</span>
-            </Link>
-            <Link 
-              to="/services" 
-              onClick={() => setIsMenuOpen(false)} 
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${
-                isActive('/services') ? 'bg-black border-l-2 border-red-600 text-white' : ''
-              }`}
-            >
-              <Settings size={18} className={isActive('/services') ? 'text-red-500' : ''} />
-              <span>Services</span>
-            </Link>
-            {/* <Link 
+          {/* Mobile Navigation */}
+          <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
+            } overflow-hidden`}>
+            <nav className="px-2 pt-2 pb-4 space-y-1 max-h-[calc(80vh-4rem)] overflow-y-auto overscroll-behavior-contain scroll-smooth"
+              style={{
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'thin',
+                scrollbarColor: '#dc2626 transparent',
+                msOverflowStyle: '-ms-autohiding-scrollbar',
+                scrollBehavior: 'smooth',
+                scrollSnapType: 'y proximity'
+              }}>
+              <Link
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${isActive('/') ? 'bg-black border-l-2 border-red-600 text-white' : ''
+                  }`}
+              >
+                <Home size={18} className={isActive('/') ? 'text-red-500' : ''} />
+                <span>Home</span>
+              </Link>
+              <Link
+                to="/about"
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${isActive('/about') ? 'bg-black border-l-2 border-red-600 text-white' : ''
+                  }`}
+              >
+                <Info size={18} className={isActive('/about') ? 'text-red-500' : ''} />
+                <span>About</span>
+              </Link>
+              <Link
+                to="/services"
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${isActive('/services') ? 'bg-black border-l-2 border-red-600 text-white' : ''
+                  }`}
+              >
+                <Settings size={18} className={isActive('/services') ? 'text-red-500' : ''} />
+                <span>Services</span>
+              </Link>
+              <Link
+                to="/amplink"
+                className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group flex items-center gap-1 ${isActive('/amblinks') ? 'text-white' : 'text-gray-300 hover:text-white'
+                  }`}
+              >
+                <Settings size={16} className="group-hover:text-red-500 transition-colors" />
+                <span>Amplink</span>
+
+                <span
+                  className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 transform origin-left transition-transform duration-300 ${isActive('/amblinks') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
+                ></span>
+              </Link>
+
+
+              {/* <Link 
               to="/shop" 
               onClick={() => setIsMenuOpen(false)} 
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${
@@ -407,7 +423,7 @@ const Header = () => {
               <ShoppingCart size={18} className={isActive('/shop') ? 'text-red-500' : ''} />
               <span>Shop</span>
             </Link> */}
-            {/* {user?.name ? (
+              {/* {user?.name ? (
               <>
                 <Link 
                   to="/contact" 
@@ -473,20 +489,19 @@ const Header = () => {
                 <span>Sign In</span>
               </button>
             )} */}
-            <Link 
-                  to="/contact" 
-                  onClick={() => setIsMenuOpen(false)} 
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${
-                    isActive('/contact') ? 'bg-black border-l-2 border-red-600 text-white' : ''
+              <Link
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${isActive('/contact') ? 'bg-black border-l-2 border-red-600 text-white' : ''
                   }`}
-                >
-                  <Phone size={18} className={isActive('/contact') ? 'text-red-500' : ''} />
-                  <span>Contact</span>
-            </Link>
-            
-            {/* <div className="border-t border-red-900/30 my-2 mx-3"></div> */}
-            
-            {/* <Link 
+              >
+                <Phone size={18} className={isActive('/contact') ? 'text-red-500' : ''} />
+                <span>Contact</span>
+              </Link>
+
+              {/* <div className="border-t border-red-900/30 my-2 mx-3"></div> */}
+
+              {/* <Link 
               to="/review" 
               onClick={() => setIsMenuOpen(false)} 
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-red-900/20 transition-all duration-300 ${
@@ -512,122 +527,122 @@ const Header = () => {
                 </span>
               )}
             </Link> */}
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    {/* Auth Modal */}
-    {isAuthModalOpen && False && (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-        <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
-          {/* Header */}
-          <div className="flex justify-between items-center p-6 border-b border-gray-100">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900">
-                {isSignup ? "Create Account" : "Welcome Back"}
-              </h2>
-              <p className="text-sm text-gray-500 mt-1">
-                {isSignup ? "Join our community today" : "Sign in to continue"}
-              </p>
-            </div>
-            <button
-              onClick={() => setIsAuthModalOpen(false)}
-              className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-50 rounded-full"
-            >
-              <X size={20} />
-            </button>
+            </nav>
           </div>
+        </div>
+      </header>
 
-          {/* Form */}
-          <form onSubmit={handleAuthSubmit} className="p-6 space-y-6">
-            {isSignup && (
+      {/* Auth Modal */}
+      {isAuthModalOpen && False && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
+            {/* Header */}
+            <div className="flex justify-between items-center p-6 border-b border-gray-100">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  {isSignup ? "Create Account" : "Welcome Back"}
+                </h2>
+                <p className="text-sm text-gray-500 mt-1">
+                  {isSignup ? "Join our community today" : "Sign in to continue"}
+                </p>
+              </div>
+              <button
+                onClick={() => setIsAuthModalOpen(false)}
+                className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-50 rounded-full"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleAuthSubmit} className="p-6 space-y-6">
+              {isSignup && (
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-gray-700">Name</label>
+                  <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <User size={16} className="text-gray-400 group-focus-within:text-red-500 transition-colors" />
+                    </div>
+                    <input
+                      type="text"
+                      name="username"
+                      value={formData.username}
+                      onChange={handleChange}
+                      className="w-full pl-10 pr-4 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-200 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 hover:border-gray-300"
+                      placeholder="Enter your full name"
+                      required={isSignup}
+                    />
+                  </div>
+                </div>
+              )}
+
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-700">Name</label>
+                <label className="block text-sm font-medium text-gray-700">Email</label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <User size={16} className="text-gray-400 group-focus-within:text-red-500 transition-colors" />
+                    <Mail size={16} className="text-gray-400 group-focus-within:text-red-500 transition-colors" />
                   </div>
                   <input
-                    type="text"
-                    name="username"
-                    value={formData.username}
+                    type="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleChange}
                     className="w-full pl-10 pr-4 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-200 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 hover:border-gray-300"
-                    placeholder="Enter your full name"
-                    required={isSignup}
+                    placeholder="Enter your email"
+                    required
                   />
                 </div>
               </div>
-            )}
 
-            <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">Email</label>
-              <div className="relative group">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail size={16} className="text-gray-400 group-focus-within:text-red-500 transition-colors" />
+              <div className="space-y-2">
+                <label className="block text-sm font-medium text-gray-700">Password</label>
+                <div className="relative group">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Lock size={16} className="text-gray-400 group-focus-within:text-red-500 transition-colors" />
+                  </div>
+                  <input
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    className="w-full pl-10 pr-4 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-200 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 hover:border-gray-300"
+                    placeholder="Enter your password"
+                    required
+                  />
                 </div>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-200 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 hover:border-gray-300"
-                  placeholder="Enter your email"
-                  required
-                />
               </div>
-            </div>
 
-            <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">Password</label>
-              <div className="relative group">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock size={16} className="text-gray-400 group-focus-within:text-red-500 transition-colors" />
-                </div>
-                <input
-                  type="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-200 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 hover:border-gray-300"
-                  placeholder="Enter your password"
-                  required
-                />
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white py-3 px-4 text-sm font-medium rounded-lg hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0"
-            >
-              {isSignup ? "Create Account" : "Sign In"}
-            </button>
-
-            <div className="text-center">
               <button
-                type="button"
-                onClick={() => setIsSignup(!isSignup)}
-                className="text-sm text-gray-600 hover:text-red-600 transition-colors font-medium inline-flex items-center gap-1"
+                type="submit"
+                className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white py-3 px-4 text-sm font-medium rounded-lg hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0"
               >
-                {isSignup ? (
-                  <>
-                    Already have an account? <span className="text-red-600">Sign In</span>
-                  </>
-                ) : (
-                  <>
-                    Don't have an account? <span className="text-red-600">Create one</span>
-                  </>
-                )}
+                {isSignup ? "Create Account" : "Sign In"}
               </button>
-            </div>
-          </form>
+
+              <div className="text-center">
+                <button
+                  type="button"
+                  onClick={() => setIsSignup(!isSignup)}
+                  className="text-sm text-gray-600 hover:text-red-600 transition-colors font-medium inline-flex items-center gap-1"
+                >
+                  {isSignup ? (
+                    <>
+                      Already have an account? <span className="text-red-600">Sign In</span>
+                    </>
+                  ) : (
+                    <>
+                      Don't have an account? <span className="text-red-600">Create one</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    )}
-    {/* <Card/> */}
-    <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover draggable pauseOnFocusLoss />
-  </>
+      )}
+      {/* <Card/> */}
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover draggable pauseOnFocusLoss />
+    </>
   );
 };
 

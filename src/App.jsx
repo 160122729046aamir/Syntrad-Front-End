@@ -7,14 +7,8 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
-import Shop from './pages/Shop';
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
+import Amplink from './pages/Amplink';
 import Contact from './pages/Contact';
-import Review from './pages/Review';
-import Profile from './pages/Profile';
-import AdminDashboard from './pages/AdminDashboard';
-
 // ✅ Import new individual service components
 import CoffeeRepair from './pages/Coffee';
 import Electrical from './pages/Electrical';
@@ -50,6 +44,7 @@ function App() {
       <ScrollToTop />
       <CartProvider>
         <div className="flex flex-col min-h-screen bg-black text-white">
+        
           <Header />
           <main className="flex-grow mt-20">
             <Routes>
@@ -57,6 +52,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
               <Route path="/about" element={<About />} />
+              <Route path="/amplink" element={<Amplink />} />
               {/* <Route path="/shop" element={<Shop />} /> */}
               {/* <Route path="/cart" element={<Cart />} /> */}
               {/* <Route path="/checkout" element={<Checkout />} /> */}
